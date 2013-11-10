@@ -1,0 +1,9 @@
+Here is a simple records system for farm livestock, using codeigniter and bootstrap for form and design elements.
+
+The top 10 and top 5 results are bundled under the reporting dropdown.
+
+I have assumed that the top 10 list of farmers sorted by the average daily milk output is the sum of the daily milk outputs of the cows they own sorted descending.
+
+I have assumed that the top 10 list of farmers sorted by the combined weekly milk output is the daily milk output of each cow mutiplied by 7 (for each day of the week) then summed together and sorted descending.
+
+I have assumed that the top 5 list of cows with the highest weekly milk output is each cows daily output multiplied by 7 and sorted descending.
