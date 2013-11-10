@@ -29,14 +29,14 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="/index.php/farmer/index">Farmers</a></li>
-      <li><a href="/index.php/livestock/index">Livestock</a></li>
+      <li class="active"><a href="/index.php/farmer/">Farmers</a></li>
+      <li><a href="/index.php/livestock/">Livestock</a></li>
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Top Lists <b class="caret"></b></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reporting <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Top 10 Farmers by average daily milk output</a></li>
-          <li><a href="#">Top 10 Farmers by combined weekly milk output</a></li>
-          <li><a href="#">Top 5 Cows with highest weekly milk output</a></li>
+          <li><a href="/index.php/reporting/toptenfarmers_by_averagedailymilk">Top 10 Farmers by average daily milk output</a></li>
+          <li><a href="/index.php/reporting/toptenfarmers_by_combinedweeklymilk">Top 10 Farmers by combined weekly milk output</a></li>
+          <li><a href="/index.php/reporting/topfivecows_with_highestweeklymilk">Top 5 Cows with highest weekly milk output</a></li>
         </ul>
       </li>
     </ul>

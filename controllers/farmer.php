@@ -15,6 +15,7 @@ class Farmer extends CI_Controller {
 		$this->load->library('session');
 		$data['farmers_livestock'] = $this->farmer_model->get_farmer_and_livestock();
 		$data['title'] = 'Farmers available';
+		$data['controller'] = $this->router->class;
 		$data['validation_errors'] = $this->session->flashdata('validation_errors');
 		$data['alert_success'] = $this->session->flashdata('alert_success');
 		$data['alert_danger'] = $this->session->flashdata('alert_danger');
@@ -24,19 +25,14 @@ class Farmer extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 
-	public function view($id)
-	{
-		$data['farmer'] = $this->farmer_model->get_farmer($id);
-	}
-
 	public function validate()
 	{
 		$this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
 
         //** Set rules */
-        $this->form_validation->set_rules('name','Farmer Name','required');
-        $this->form_validation->set_rules('county','County','required');
+        $this->form_validation->set_rules('name','Farmer Name','required|max_length[50]');
+        $this->form_validation->set_rules('county','County','required|max_length[20]');
 
         if($this->input->is_ajax_request())
         {

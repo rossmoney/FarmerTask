@@ -56,18 +56,20 @@
     			<thead>
 					<th>Cow Name</th>
 					<th>Average Daily Milk</th>
+					<th></th>
 				</thead>
 				<tbody>
     		<?php foreach ($farmer['livestock'] as $livestock): ?>
     			<tr>
 					<td><?php echo $livestock['cowname'] ?></td>
-    				<td><?php echo $livestock['averagedailymilk'] ?></td>
+    				<td><?php echo $livestock['averagedailymilk'] ?>L</td>
+    				<td><button class="deleteLivestock btn btn-danger" livestockid="<?php echo $livestock['id']; ?>">Delete Cow</button></td>
     			</tr>
     		<?php endforeach ?>
     			</tbody>
     		</table>
     	</td>
-    	<td><button class="deleteFarmer btn btn-danger" farmerid="<?php echo $farmer['id']; ?>">Delete</button></td>
+    	<td><button class="deleteFarmer btn btn-danger" farmerid="<?php echo $farmer['id']; ?>">Delete Farmer</button></td>
     </tr>
 
 <?php endforeach ?>

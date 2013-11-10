@@ -10,6 +10,7 @@ class Farmer_model extends CI_Model {
 	{
 		if ($id === FALSE)
 		{
+			$this->db->order_by('name', 'ASC');
 			$query = $this->db->get('farmer');
 			return $query->result_array();
 		}

@@ -20,10 +20,10 @@ class Livestock_model extends CI_Model {
 
 	public function get_livestock_with_farmer($farmerid = FALSE)
 	{
-		$this->db->select('farmer.name as farmer, livestock.cowname as name, averagedailymilk');
+		$this->db->select('livestock.id as id, farmer.name as farmer, livestock.cowname as name, averagedailymilk');
 		$this->db->from('livestock');
 		$this->db->join('farmer', 'farmer.id = livestock.farmer_id' );
-		$this->db->order_by('averagedailymilk', 'DESC');
+		$this->db->order_by('cowname', 'ASC');
 
 		if ($farmerid != FALSE)
 		{
@@ -42,6 +42,22 @@ class Livestock_model extends CI_Model {
 		$this->db->order_by('averagedailymilk', 'DESC');
 		$query = $this->db->get();
 		return $query->result_array();
+	}
+
+	public function set_livestock($farmer_id, $cowname, $admOutput)
+	{
+		$data = array(
+		   'farmer_id' => $farmer_id,
+		   'cowname' => $cowname,
+		   'averagedailymilk' => $admOutput
+		);
+
+		$this->db->insert('livestock', $data);
+	}
+
+	public function delete_livestock($id)
+	{
+		$this->db->delete('livestock', array('id' => $id));
 	}
 
 }
