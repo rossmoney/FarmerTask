@@ -46,5 +46,25 @@
   </div><!-- /.navbar-collapse -->
 </nav>
 <div class="container">
+<?php if(!empty($alert_success))
+{
+  ?>
+<div class="alert alert-success alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <?php echo $alert_success; ?>
+</div>
+  <?php
+}
+?>
+<?php if(!empty($alert_danger))
+{
+  ?>
+<div class="alert alert-danger alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <?php echo $alert_danger; ?>
+</div>
+  <?php
+}
+?>
   <div class="row">
 

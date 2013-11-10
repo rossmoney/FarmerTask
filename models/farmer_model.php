@@ -28,5 +28,20 @@ class Farmer_model extends CI_Model {
 		}
 		return $farmers;
 	}
+
+	public function set_farmer($name, $county)
+	{
+		$data = array(
+		   'name' => $name,
+		   'county' => $county
+		);
+
+		$this->db->insert('farmer', $data);
+	}
+
+	public function delete_farmer($id)
+	{
+		$this->db->delete('farmer', array('id' => $id));
+	}
 }
 ?>
